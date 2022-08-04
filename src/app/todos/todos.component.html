@@ -1,0 +1,28 @@
+<!-- Header -->
+<div class="page-header">
+
+  <!-- Title -->
+  <div class="fw-bold">My Todos</div>
+
+  <!-- Delete -->
+  <button (click)="clean()"
+          class="btn btn-danger btn-sm ms-auto text-light"
+          title="Delete completed tasks">
+    Clean
+  </button>
+</div>
+
+<!-- Todos -->
+<div (click)="toggleTodo(todo)"
+     *ngFor="let todo of todos; let last = last"
+     [class.done]="todo.done"
+     [class.mb-3]="!last"
+     class="card priority-{{ todo.priority }}">
+  <div class="card-body d-flex align-items-center justify-content-between">
+    <div>{{ todo.title }}</div>
+    <div class="small text-secondary">{{ todo.date | date }}</div>
+  </div>
+</div>
+
+<!-- No data -->
+<div *ngIf="!todos.length" class="text-secondary">You have no todos.</div>

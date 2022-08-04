@@ -1,0 +1,27 @@
+@import "src/variables";
+
+.card {
+  cursor: pointer;
+  border-left-width: 4px;
+
+  &:hover:not(.done) {
+    background: rgba(black, 0.01);
+  }
+
+  &.done {
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+
+  &.priority-0 {
+    border-left-color: $primary;
+  }
+
+  &.priority-1 {
+    border-left-color: $warning;
+  }
+
+  &.priority-2 {
+    border-left-color: $danger;
+  }
+}

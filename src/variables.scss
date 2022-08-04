@@ -1,0 +1,21 @@
+$danger: #e74c3c;
+$warning: #f1c40f;
+
+$font-family-base: "Roboto", sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+
+$link-decoration: none;
+
+$card-border-color: #e1e1e1;
+$card-border-radius: 0;
+
+$btn-border-radius: 100rem;
+$btn-padding-x: 2rem;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
