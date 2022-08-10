@@ -34,19 +34,19 @@ export class CreationComponent implements OnInit, OnDestroy {
   /** getter for title directive.
    Need for checking required validation */
   get _title() {
-    return this.creationForm.get('title')
+    return this.creationForm.get('title');
   }
 
   /** getter for priority directive.
    Need for checking required validation */
   get _priority() {
-    return this.creationForm.get('priority')
+    return this.creationForm.get('priority');
   }
 
   /** getter for date directive.
    Need for checking required validation */
   get _date() {
-    return this.creationForm.get('date')
+    return this.creationForm.get('date');
   }
 
   ngOnInit(): void {
@@ -58,8 +58,13 @@ export class CreationComponent implements OnInit, OnDestroy {
   }
 
   save() {
-    // @ts-ignore
-    this.appService.todos.next(this.todos.concat(this.creationForm.value))
+    if (this.creationForm.valid) {
+      // @ts-ignore
+      this.appService.todos.next(this.todos.concat(this.creationForm.value));
+      this.creationForm.reset();
+    } else {
+      console.log(this.creationForm);
+    }
   }
 
   ngOnDestroy(): void {

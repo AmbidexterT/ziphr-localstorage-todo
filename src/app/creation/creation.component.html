@@ -9,7 +9,7 @@
   <div class="small text-secondary">
     <form [formGroup]="creationForm" (ngSubmit)="save()">
       <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
+        <label for="title" class="form-label">Title:<span style="color: red">*</span></label>
         <input
           required
           type="text"
@@ -20,14 +20,14 @@
         <div *ngIf="_title?.invalid && (_title?.dirty || _title?.touched)"
              class="alert">
 
-          <div *ngIf="_title?.errors?.['required']">
+          <div *ngIf="_title?.errors?.['required']" style="color: red">
             Title is required.
           </div>
 
         </div>
       </div>
       <div class="mb-3">
-        <label for="date" class="form-label">Date</label>
+        <label for="date" class="form-label">Date:<span style="color: red">*</span></label>
         <input
           required
           type="date"
@@ -38,27 +38,27 @@
         <div *ngIf="_date?.invalid && (_date?.dirty || _date?.touched)"
              class="alert">
 
-          <div *ngIf="_date?.errors?.['required']">
+          <div *ngIf="_date?.errors?.['required']" style="color: red">
             Date is required.
           </div>
 
         </div>
       </div>
       <div class="mb-3">
-        <label for="priority" class="form-label" >Priority</label>
+        <label for="priority" class="form-label">Priority:<span style="color: red">*</span></label>
         <select required class="form-select" formControlName="priority" id="priority">
           <option value="0">LOW</option>
           <option value="1">NORMAL</option>
           <option value="2">HIGH</option>
-          <div *ngIf="_priority?.invalid && (_priority?.dirty || _priority?.touched)"
-               class="alert">
-
-            <div *ngIf="_priority?.errors?.['required']">
-              Priority is required.
-            </div>
-
-          </div>
         </select>
+        <div *ngIf="_priority?.invalid && (_priority?.dirty || _priority?.touched)"
+             class="alert">
+
+          <div *ngIf="_priority?.errors?.['required']" style="color: red">
+            Priority is required.
+          </div>
+
+        </div>
       </div>
 
       <!-- Todo prev -->
